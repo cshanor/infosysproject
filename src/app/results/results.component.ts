@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+import { BackendService } from "../backend.service";
 
 @Component({
   selector: 'app-results',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  search = '';
+  results: Object;
+
+  constructor(private http: HttpClient, private backend: BackendService) { }
 
   ngOnInit() {
   }
 
+  getFlights() {
+    this.backend.getFlights();
+  }
+
+  // searchClick() {
+  //   this.getFlights().subscribe(data => {
+  //     this.results = data;
+  //     console.log(this.results);
+  //   })
+  // }
 }

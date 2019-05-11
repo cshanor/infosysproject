@@ -5,7 +5,6 @@ import { User } from "../User";
 import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
 import { NavComponent } from "../nav/nav.component";
-import any = jasmine.any;
 
 @Component({
   selector: 'app-login',
@@ -46,7 +45,7 @@ export class LoginComponent implements OnInit {
     this.backend.authUser(JSON.stringify(this.user))
       .pipe(map(response => {
         if (response.body == null) {
-          alert(['Placeholder alert']);
+          alert(['Username not found in database.']);
           console.log('in loginComponent.onSubmit(): response.body was null');
         } else {
           console.log('in loginComponent.onSubmit(): response.body was not null');

@@ -1,0 +1,11 @@
+.line-titles {
+  color: white;
+  filter: drop-shadow(0 0 3px #333);
+}
+#title {
+  margin-top: 25px;
+}
+
+#flyingFromInput, #departDateInput, #flyingToInput, #returnDateInput, #submit-button {
+  filter: drop-shadow(0 0 3px #333);
+}

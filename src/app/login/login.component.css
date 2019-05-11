@@ -1,0 +1,12 @@
+.line-titles {
+  color: white;
+  filter: drop-shadow(0 0 3px #333);
+}
+
+#title {
+  margin-top: 25px;
+}
+
+#username, #password, #submit-button {
+  filter: drop-shadow(0 0 3px #333);
+}

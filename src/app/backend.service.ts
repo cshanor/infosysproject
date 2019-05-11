@@ -45,8 +45,8 @@ export class BackendService {
     return this.http.post(LOCALHOST_USER + 'user/add', user, {observe: 'response'});
   }
 
-  getFlight(flightNumber) {
-    return this.http.post(LOCALHOST_FLIGHT + 'flight/get', flightNumber, {observe: 'response'})
+  getFlights() {
+    return this.http.get(LOCALHOST_FLIGHT + 'flight/get', {observe: 'response'})
   }
 
 }
