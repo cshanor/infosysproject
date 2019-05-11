@@ -2,17 +2,19 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {HttpHeaders} from "@angular/common/http";
 import {Observable, Subject} from "rxjs";
+import {proxy} from "@angular/core/testing/src/testing_internal";
 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Accept': 'application/json'
+    'Accept': 'application/json',
   })
 };
 
 const LOCALHOST_USER = 'http://localhost:8080/AirlineReservationSystem_war/';
 const LOCALHOST_FLIGHT = 'http://localhost:8080/flight';
-const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+const proxyurl = 'https://crossorigin.me/';
+
 
 
 @Injectable({

@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
         if (response.body == null) {
           alert(['Username taken. Please choose another.']);
         } else {
-          this.router.navigate(['/info']);
+          this.router.navigate(['/login']);
           this.submitted = true;
         }
       })).subscribe();

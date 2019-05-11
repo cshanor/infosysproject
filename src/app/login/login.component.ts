@@ -5,6 +5,7 @@ import { User } from "../User";
 import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
 import { NavComponent } from "../nav/nav.component";
+import any = jasmine.any;
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   user: User = {
-    id: 0,
+    id: 3,
     firstName: '',
     lastName: '',
     username: '',
@@ -40,6 +41,8 @@ export class LoginComponent implements OnInit {
     this.user.username = this.loginForm.value.username;
     this.user.password = this.loginForm.value.password;
 
+    console.log(this.user);
+
     this.backend.authUser(JSON.stringify(this.user))
       .pipe(map(response => {
         if (response.body == null) {
@@ -47,12 +50,12 @@ export class LoginComponent implements OnInit {
           console.log('in loginComponent.onSubmit(): response.body was null');
         } else {
           console.log('in loginComponent.onSubmit(): response.body was not null');
-
+          console.log(this.user);
           localStorage.clear();
           localStorage.setItem('jwt', response.headers.get('Authorization'));
           localStorage.setItem('User_ID', response.headers.get('User_ID'));
           localStorage.setItem('Username', response.headers.get('Username'));
-          this.router.navigate(['/info']);
+          this.router.navigate(['/']);
         }
       })).subscribe();
   }

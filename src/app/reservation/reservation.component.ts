@@ -16,6 +16,7 @@ export class ReservationComponent implements OnInit {
   submitted = false;
   flight = new Flight();
   seats = Array.from(Array(208), (_,x) => x);
+  assignedSeat = this.seats[Math.floor(Math.random() * this.seats.length)];
 
 
   public constructor(private formBuilder: FormBuilder, private backend: BackendService, private router: Router) { }
@@ -36,10 +37,13 @@ export class ReservationComponent implements OnInit {
   onSubmit() {
 
     console.log(this.seats);
+    console.log(this.flight);
+    console.log(this.assignedSeat);
 
     if (this.reservationForm.invalid) {
       return;
     }
+
 
     this.flight.flightNumber = 0;
     this.flight.origin = this.reservationForm.value.origin;
@@ -49,5 +53,4 @@ export class ReservationComponent implements OnInit {
 
     // this.backend.getFlight()
   }
-
 }
