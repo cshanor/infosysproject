@@ -1,4 +1,4 @@
-Airline Reservation System (In development)
+Airline Reservation System (In development) by Christopher Shanor
 
 This is an airline reservation system developed with Angular, Java 1.8, and Oracle DB.
 
@@ -6,6 +6,7 @@ Functional:
 Registering users/populating database with users
 Logging in
 Authentication with JWT
+Web Application responsiveness is also in place through Bootstrap
 
 Not functional:
 Reserving Flights
