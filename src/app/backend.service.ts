@@ -11,8 +11,7 @@ const httpOptions = {
   })
 };
 
-const LOCALHOST_USER = 'http://localhost:8080/AirlineReservationSystem_war/';
-const LOCALHOST_FLIGHT = 'http://localhost:8080/flight';
+const LOCALHOST = 'http://localhost:8080/AirlineReservationSystem_war/';
 const proxyurl = 'https://crossorigin.me/';
 
 
@@ -37,16 +36,16 @@ export class BackendService {
   }
 
   authUser(user) {
-    return this.http.post<any>(LOCALHOST_USER + 'user/auth', user, {observe: 'response'});
+    return this.http.post<any>(LOCALHOST + 'user/auth', user, {observe: 'response'});
   }
 
   addUser(user) {
     console.log(user + 'in the addUser');
-    return this.http.post(LOCALHOST_USER + 'user/add', user, {observe: 'response'});
+    return this.http.post(LOCALHOST + 'user/add', user, {observe: 'response'});
   }
 
   getFlights() {
-    return this.http.get(LOCALHOST_FLIGHT + 'flight/get', {observe: 'response'})
+    return this.http.get(LOCALHOST + 'flight/getall', {observe: 'response'})
   }
 
 }

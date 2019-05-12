@@ -5,6 +5,7 @@ import { Flight } from "../Flight";
 
 import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
+import {User} from "../User";
 
 @Component({
   selector: 'app-reservation',
@@ -15,8 +16,9 @@ export class ReservationComponent implements OnInit {
   reservationForm: FormGroup;
   submitted = false;
   flight = new Flight();
-  seats = Array.from(Array(208), (_,x) => x);
-  assignedSeat = this.seats[Math.floor(Math.random() * this.seats.length)];
+  user = new User();
+  // seats = Array.from(Array(208), (_,x) => x);
+  // assignedSeat = this.seats[Math.floor(Math.random() * this.seats.length)];
 
 
   public constructor(private formBuilder: FormBuilder, private backend: BackendService, private router: Router) { }
@@ -36,14 +38,11 @@ export class ReservationComponent implements OnInit {
 
   onSubmit() {
 
-    console.log(this.seats);
     console.log(this.flight);
-    console.log(this.assignedSeat);
 
     if (this.reservationForm.invalid) {
       return;
     }
-
 
     this.flight.flightNumber = 0;
     this.flight.origin = this.reservationForm.value.origin;
@@ -51,6 +50,6 @@ export class ReservationComponent implements OnInit {
     this.flight.departDate = this.reservationForm.value.depart_date;
     this.flight.arrivalTime = this.reservationForm.value.arrival_date;
 
-    // this.backend.getFlight()
+    console.log(this.backend.getFlights());
   }
 }
