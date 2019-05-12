@@ -1,1 +1,13 @@
-readme for creation
+Airline Reservation System (In development)
+
+This is an airline reservation system developed with Angular, Java 1.8, and Oracle DB.
+
+Functional:
+Registering users/populating database with users
+Logging in
+Authentication with JWT
+
+Not functional:
+Reserving Flights
+
+The front-end code can be found here: https://github.com/cshanor/infosysproject/tree/chris
