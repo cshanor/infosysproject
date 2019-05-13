@@ -1,0 +1,8 @@
+body {
+  background-image: url(assets/sky-414198_1920.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
